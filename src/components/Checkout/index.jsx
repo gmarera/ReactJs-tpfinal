@@ -9,6 +9,7 @@ import { addDoc, collection, getFirestore } from "firebase/firestore";
 function Checkout() {
   const { cartLibros, agregar, restar, borrar } = useContext(CartContext);
   const [orderId, setOrderId] = useState("");
+  const fecha = new Date();
   const precioTotal = cartLibros.reduce((acc, libro) => acc + libro.precio * libro.cantidad, 0);
 
   const {
@@ -42,6 +43,8 @@ function Checkout() {
   const watchEmail1 = watch("email1");
   const watchEmail2 = watch("email2");
 
+  const fecha2 = fecha.toLocaleDateString();
+
   const order = {
     cliente: {
       nombre: nombre,
@@ -51,6 +54,7 @@ function Checkout() {
     },
     libros: cartLibros,
     total: precioTotal,
+    fecha: fecha2,
   };
 
   return (
