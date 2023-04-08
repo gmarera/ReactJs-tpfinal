@@ -84,8 +84,6 @@ function Checkout() {
       </div>
       <br />
       <br />
-      <br />
-      <br />
       <p>
         <strong>Por favor, complete los siguientes datos para finalizar la compra.</strong>
       </p>

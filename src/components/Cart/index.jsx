@@ -11,6 +11,7 @@ const Cart = () => {
 
   return (
     <div className={styles.container}>
+      <h3 className={styles.checkout}>Carrito de Compras</h3>
       <div>
         {cartLibros && cartLibros.length > 0 ? (
           cartLibros.map((libro, index) => (
@@ -22,11 +23,11 @@ const Cart = () => {
                 <p>{libro.titulo}</p>
               </div>
               <div className={styles.cantidad}>
-                <p className={styles.count} onClick={() => restar(libro)}>
+                <p className={styles.countmenos} onClick={() => restar(libro)}>
                   -
                 </p>
                 <p>{libro.cantidad}</p>
-                <p className={styles.count} onClick={() => agregar(libro)}>
+                <p className={styles.countmas} onClick={() => agregar(libro)}>
                   +
                 </p>
               </div>
@@ -43,7 +44,7 @@ const Cart = () => {
         ) : (
           <p className={styles.emptyCart}>Aún no hay libros en el Carrito de Compras.</p>
         )}
-        <div>
+        <div className={styles.footer}>
           <h2 className={styles.total}>Total: $ {precioTotal}</h2>
           <div className={styles.frameCheckout}>
             <button
@@ -56,7 +57,7 @@ const Cart = () => {
               Vaciar Carrito
             </button>
             <Link to="/checkout">
-              <button className={styles.comprar}>Check-Out</button>
+              <button className={styles.comprar}>Confirmar Compra</button>
             </Link>
           </div>
         </div>
