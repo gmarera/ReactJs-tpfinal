@@ -55,6 +55,7 @@ function Checkout() {
     libros: cartLibros,
     total: precioTotal,
     fecha: fecha2,
+    estado: "Generada",
   };
 
   return (
